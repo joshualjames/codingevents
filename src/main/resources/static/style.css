@@ -1,4 +1,9 @@
 body{
-    font-size: 18px;
+    font-size: 38px;
     color: purple;
+}
+
+img{
+    height: 100px;
+    width: 100px;
 }
