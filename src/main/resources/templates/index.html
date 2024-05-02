@@ -8,6 +8,8 @@
 
 <h1>Coding Events</h1>
 
+<p th:unless="${events} and ${event.size()}">No events!</p>
+
 <nav>
     <ul>
         <li><a href="/events">All Events</a></li>
