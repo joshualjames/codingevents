@@ -1,8 +1,6 @@
 package org.launchcode.codingevents.models;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.Objects;
 
@@ -10,6 +8,9 @@ public class Event {
     //fields
     private int id;
     private static int nextId = 1;
+
+    @NotBlank(message = "Location is required")
+    private String location;
 
     @NotBlank(message = "Name is required")
     @Size(min = 3, max= 50, message="Name must be between 3 and 50 characters!")
@@ -20,13 +21,21 @@ public class Event {
     @Email(message="Invalid Email!")
     private String contactEmail;
 
+    @AssertTrue(message = "Registration must be required. Please type 'true'")
+    private boolean registration;
+    @Positive(message="Number of attendees must be one or more.")
+    private int numberOfAttendees;
 
     //Constructors
-    public Event(String name, String description, String contactEmail) {
+    public Event(String name, String description, String contactEmail, String location, boolean registration, int numberOfAttendees) {
         this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.location = location;
+        this.registration = registration;
+        this.numberOfAttendees = numberOfAttendees;
+
     }
 
     public Event(){
@@ -61,6 +70,30 @@ public class Event {
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public boolean isRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(boolean registration) {
+        this.registration = registration;
+    }
+
+    public int getNumberOfAttendees() {
+        return numberOfAttendees;
+    }
+
+    public void setNumberOfAttendees(int numberOfAttendees) {
+        this.numberOfAttendees = numberOfAttendees;
     }
 
     //Methods
