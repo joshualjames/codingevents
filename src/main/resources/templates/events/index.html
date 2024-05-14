@@ -15,6 +15,7 @@
         <th>Location</th>
         <th>Number of Attendees</th>
         <th>Registration Required?</th>
+        <th>Type</th>
     </tr>
     </thead>
     <tr th:each="event : ${events}">
@@ -25,6 +26,7 @@
         <td th:text="${event.location}"></td>
         <td th:text="${event.numberOfAttendees}"></td>
         <td th:text="${event.registration}"></td>
+        <td th:text="${event.type.displayName}"></td>
 <!--        <td>-->
 <!--            <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>-->
 <!--        </td>-->

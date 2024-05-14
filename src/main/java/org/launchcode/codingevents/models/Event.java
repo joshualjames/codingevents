@@ -26,8 +26,11 @@ public class Event {
     @Positive(message="Number of attendees must be one or more.")
     private int numberOfAttendees;
 
+    private EventType type;
+
     //Constructors
-    public Event(String name, String description, String contactEmail, String location, boolean registration, int numberOfAttendees) {
+    public Event(String name, String description, String contactEmail, String location,
+                 boolean registration, int numberOfAttendees, EventType type) {
         this();
         this.name = name;
         this.description = description;
@@ -35,6 +38,7 @@ public class Event {
         this.location = location;
         this.registration = registration;
         this.numberOfAttendees = numberOfAttendees;
+        this.type = type;
 
     }
 
@@ -94,6 +98,14 @@ public class Event {
 
     public void setNumberOfAttendees(int numberOfAttendees) {
         this.numberOfAttendees = numberOfAttendees;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     //Methods
