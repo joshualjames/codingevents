@@ -1,13 +1,20 @@
 package org.launchcode.codingevents.models;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
-
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import jakarta.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Event {
     //fields
+    @Id
+    @GeneratedValue
     private int id;
-    private static int nextId = 1;
 
     @NotBlank(message = "Location is required")
     private String location;
@@ -31,7 +38,6 @@ public class Event {
     //Constructors
     public Event(String name, String description, String contactEmail, String location,
                  boolean registration, int numberOfAttendees, EventType type) {
-        this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
@@ -42,10 +48,7 @@ public class Event {
 
     }
 
-    public Event(){
-        this.id = nextId;
-        nextId++;
-    }
+    public Event(){}
 
     //Getters and Setters
     public String getName() {
