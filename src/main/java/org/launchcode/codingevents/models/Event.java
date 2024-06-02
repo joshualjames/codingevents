@@ -7,8 +7,8 @@ import jakarta.validation.constraints.*;
 public class Event extends AbstractEntity{
     //fields
 
-    @NotBlank(message = "Location is required")
-    private String location;
+//    @NotBlank(message = "Location is required")
+//    private String location;
 
     @Size(max= 500, message="Description too long!")
     private String description;
@@ -16,10 +16,10 @@ public class Event extends AbstractEntity{
     @Email(message="Invalid Email!")
     private String contactEmail;
 
-    @AssertTrue(message = "Registration must be required. Please type 'true'")
-    private boolean registration;
-    @Positive(message="Number of attendees must be one or more.")
-    private int numberOfAttendees;
+//    @AssertTrue(message = "Registration must be required. Please type 'true'")
+//    private boolean registration;
+//    @Positive(message="Number of attendees must be one or more.")
+//    private int numberOfAttendees;
 
     private EventType type;
 
@@ -29,9 +29,9 @@ public class Event extends AbstractEntity{
         super();
         this.description = description;
         this.contactEmail = contactEmail;
-        this.location = location;
-        this.registration = registration;
-        this.numberOfAttendees = numberOfAttendees;
+//        this.location = location;
+//        this.registration = registration;
+//        this.numberOfAttendees = numberOfAttendees;
         this.type = type;
 
     }
@@ -56,29 +56,29 @@ public class Event extends AbstractEntity{
         this.contactEmail = contactEmail;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public boolean isRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(boolean registration) {
-        this.registration = registration;
-    }
-
-    public int getNumberOfAttendees() {
-        return numberOfAttendees;
-    }
-
-    public void setNumberOfAttendees(int numberOfAttendees) {
-        this.numberOfAttendees = numberOfAttendees;
-    }
+//    public String getLocation() {
+//        return location;
+//    }
+//
+//    public void setLocation(String location) {
+//        this.location = location;
+//    }
+//
+//    public boolean isRegistration() {
+//        return registration;
+//    }
+//
+//    public void setRegistration(boolean registration) {
+//        this.registration = registration;
+//    }
+//
+//    public int getNumberOfAttendees() {
+//        return numberOfAttendees;
+//    }
+//
+//    public void setNumberOfAttendees(int numberOfAttendees) {
+//        this.numberOfAttendees = numberOfAttendees;
+//    }
 
     public EventType getType() {
         return type;
