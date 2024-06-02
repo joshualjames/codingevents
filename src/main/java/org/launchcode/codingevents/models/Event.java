@@ -2,7 +2,11 @@ package org.launchcode.codingevents.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Event extends AbstractEntity  {
@@ -10,6 +14,7 @@ public class Event extends AbstractEntity  {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
+
 
     @Size(max = 500, message = "Description too long!")
     private String description;
