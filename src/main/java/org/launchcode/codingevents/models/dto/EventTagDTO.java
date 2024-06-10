@@ -1,2 +1,3 @@
-package org.launchcode.codingevents.models.dto;public class EventTagDTO {
+package org.launchcode.codingevents.models.dto;
+public class EventTagDTO {
 }
